@@ -111,56 +111,64 @@ inline quat::quat(float_t m00, float_t m01, float_t m02, float_t m10,
     }
 }
 
-inline quat operator +(const quat& left, const quat& right) {
+inline quat operator+(const quat& left, const quat& right) {
     return quat::store_xmm(_mm_add_ps(quat::load_xmm(left), quat::load_xmm(right)));
 }
 
-inline quat operator +(const quat& left, const float_t right) {
+inline quat operator+(const quat& left, const float_t right) {
     return quat::store_xmm(_mm_add_ps(quat::load_xmm(left), quat::load_xmm(right)));
 }
 
-inline quat operator -(const quat& left, const quat& right) {
+inline quat operator-(const quat& left, const quat& right) {
     return quat::store_xmm(_mm_sub_ps(quat::load_xmm(left), quat::load_xmm(right)));
 }
 
-inline quat operator -(const quat& left, const float_t right) {
+inline quat operator-(const quat& left, const float_t right) {
     return quat::store_xmm(_mm_sub_ps(quat::load_xmm(left), quat::load_xmm(right)));
 }
 
-inline quat operator *(const quat& left, const quat& right) {
+inline quat operator*(const quat& left, const quat& right) {
     return quat::store_xmm(_mm_mul_ps(quat::load_xmm(left), quat::load_xmm(right)));
 }
 
-inline quat operator *(const quat& left, const float_t right) {
+inline quat operator*(const quat& left, const float_t right) {
     return quat::store_xmm(_mm_mul_ps(quat::load_xmm(left), quat::load_xmm(right)));
 }
 
-inline quat operator /(const quat& left, const quat& right) {
+inline quat operator/(const quat& left, const quat& right) {
     return quat::store_xmm(_mm_div_ps(quat::load_xmm(left), quat::load_xmm(right)));
 }
 
-inline quat operator /(const quat& left, const float_t right) {
+inline quat operator/(const quat& left, const float_t right) {
     return quat::store_xmm(_mm_div_ps(quat::load_xmm(left), quat::load_xmm(right)));
 }
 
-inline quat operator &(const quat& left, const quat& right) {
+inline quat operator&(const quat& left, const quat& right) {
     return quat::store_xmm(_mm_and_ps(quat::load_xmm(left), quat::load_xmm(right)));
 }
 
-inline quat operator &(const quat& left, const float_t right) {
+inline quat operator&(const quat& left, const float_t right) {
     return quat::store_xmm(_mm_and_ps(quat::load_xmm(left), quat::load_xmm(right)));
 }
 
-inline quat operator ^(const quat& left, const quat& right) {
+inline quat operator^(const quat& left, const quat& right) {
     return quat::store_xmm(_mm_xor_ps(quat::load_xmm(left), quat::load_xmm(right)));
 }
 
-inline quat operator ^(const quat& left, const float_t right) {
+inline quat operator^(const quat& left, const float_t right) {
     return quat::store_xmm(_mm_xor_ps(quat::load_xmm(left), quat::load_xmm(right)));
 }
 
-inline quat operator -(const quat& left) {
+inline quat operator-(const quat& left) {
     return quat::store_xmm(_mm_xor_ps(quat::load_xmm(left), vec4_neg));
+}
+
+inline bool operator==(const quat& left, const quat& right) {
+    return !memcmp(&left, &right, sizeof(quat));
+}
+
+inline bool operator!=(const quat& left, const quat& right) {
+    return !(left == right);
 }
 
 inline __m128 quat::load_xmm(const float_t data) {
@@ -285,8 +293,11 @@ inline quat quat::slerp(const quat& left, const quat& right, const float_t blend
     float_t dot = quat::dot(x_t, y_t);
     if (dot < 0.0f) {
         dot = -dot;
-        x_t = -x_t;
+        y_t = -y_t;
     }
+
+    if (1.0 - dot <= 0.08f)
+        return quat::lerp(x_t, y_t, blend);
 
     dot = min_def(dot, 1.0f);
 

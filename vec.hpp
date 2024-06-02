@@ -542,136 +542,136 @@ inline vec2 vec2::store_xmm(const __m128&& data) {
     return _data;
 }
 
-inline vec2 operator +(const vec2& left, const vec2& right) {
+inline vec2 operator+(const vec2& left, const vec2& right) {
     return vec2::store_xmm(_mm_add_ps(vec2::load_xmm(left), vec2::load_xmm(right)));
 }
 
-inline vec2 operator +(const vec2& left, const float_t right) {
+inline vec2 operator+(const vec2& left, const float_t right) {
     return vec2::store_xmm(_mm_add_ps(vec2::load_xmm(left), vec2::load_xmm(right)));
 }
 
-inline vec2 operator +(const float_t left, const vec2& right) {
+inline vec2 operator+(const float_t left, const vec2& right) {
     return vec2::store_xmm(_mm_add_ps(vec2::load_xmm(left), vec2::load_xmm(right)));
 }
 
-inline void operator +=(vec2& left, const vec2& right) {
+inline void operator+=(vec2& left, const vec2& right) {
     left = vec2::store_xmm(_mm_add_ps(vec2::load_xmm(left), vec2::load_xmm(right)));
 }
 
-inline void operator +=(vec2& left, const float_t right) {
+inline void operator+=(vec2& left, const float_t right) {
     left = vec2::store_xmm(_mm_add_ps(vec2::load_xmm(left), vec2::load_xmm(right)));
 }
 
-inline vec2 operator -(const vec2& left, const vec2& right) {
+inline vec2 operator-(const vec2& left, const vec2& right) {
     return vec2::store_xmm(_mm_sub_ps(vec2::load_xmm(left), vec2::load_xmm(right)));
 }
 
-inline vec2 operator -(const vec2& left, const float_t right) {
+inline vec2 operator-(const vec2& left, const float_t right) {
     return vec2::store_xmm(_mm_sub_ps(vec2::load_xmm(left), vec2::load_xmm(right)));
 }
 
-inline vec2 operator -(const float_t left, const vec2& right) {
+inline vec2 operator-(const float_t left, const vec2& right) {
     return vec2::store_xmm(_mm_sub_ps(vec2::load_xmm(left), vec2::load_xmm(right)));
 }
 
-inline void operator -=(vec2& left, const vec2& right) {
+inline void operator-=(vec2& left, const vec2& right) {
     left = vec2::store_xmm(_mm_sub_ps(vec2::load_xmm(left), vec2::load_xmm(right)));
 }
 
-inline void operator -=(vec2& left, const float_t right) {
+inline void operator-=(vec2& left, const float_t right) {
     left = vec2::store_xmm(_mm_sub_ps(vec2::load_xmm(left), vec2::load_xmm(right)));
 }
 
-inline vec2 operator *(const vec2& left, const vec2& right) {
+inline vec2 operator*(const vec2& left, const vec2& right) {
     return vec2::store_xmm(_mm_mul_ps(vec2::load_xmm(left), vec2::load_xmm(right)));
 }
 
-inline vec2 operator *(const vec2& left, const float_t right) {
+inline vec2 operator*(const vec2& left, const float_t right) {
     return vec2::store_xmm(_mm_mul_ps(vec2::load_xmm(left), vec2::load_xmm(right)));
 }
 
-inline vec2 operator *(const float_t left, const vec2& right) {
+inline vec2 operator*(const float_t left, const vec2& right) {
     return vec2::store_xmm(_mm_mul_ps(vec2::load_xmm(left), vec2::load_xmm(right)));
 }
 
-inline void operator *=(vec2& left, const vec2& right) {
+inline void operator*=(vec2& left, const vec2& right) {
     left = vec2::store_xmm(_mm_mul_ps(vec2::load_xmm(left), vec2::load_xmm(right)));
 }
 
-inline void operator *=(vec2& left, const float_t right) {
+inline void operator*=(vec2& left, const float_t right) {
     left = vec2::store_xmm(_mm_mul_ps(vec2::load_xmm(left), vec2::load_xmm(right)));
 }
 
-inline vec2 operator /(const vec2& left, const vec2& right) {
+inline vec2 operator/(const vec2& left, const vec2& right) {
     return vec2::store_xmm(_mm_div_ps(vec2::load_xmm(left), vec2::load_xmm(right)));
 }
 
-inline vec2 operator /(const vec2& left, const float_t right) {
+inline vec2 operator/(const vec2& left, const float_t right) {
     return vec2::store_xmm(_mm_div_ps(vec2::load_xmm(left), vec2::load_xmm(right)));
 }
 
-inline vec2 operator /(const float_t left, const vec2& right) {
+inline vec2 operator/(const float_t left, const vec2& right) {
     return vec2::store_xmm(_mm_div_ps(vec2::load_xmm(left), vec2::load_xmm(right)));
 }
 
-inline void operator /=(vec2& left, const vec2& right) {
+inline void operator/=(vec2& left, const vec2& right) {
     left = vec2::store_xmm(_mm_div_ps(vec2::load_xmm(left), vec2::load_xmm(right)));
 }
 
-inline void operator /=(vec2& left, const float_t right) {
+inline void operator/=(vec2& left, const float_t right) {
     left = vec2::store_xmm(_mm_div_ps(vec2::load_xmm(left), vec2::load_xmm(right)));
 }
 
-inline vec2 operator &(const vec2& left, const vec2& right) {
+inline vec2 operator&(const vec2& left, const vec2& right) {
     return vec2::store_xmm(_mm_and_ps(vec2::load_xmm(left), vec2::load_xmm(right)));
 }
 
-inline vec2 operator &(const vec2& left, const float_t right) {
+inline vec2 operator&(const vec2& left, const float_t right) {
     return vec2::store_xmm(_mm_and_ps(vec2::load_xmm(left), vec2::load_xmm(right)));
 }
 
-inline vec2 operator &(const float_t left, const vec2& right) {
+inline vec2 operator&(const float_t left, const vec2& right) {
     return vec2::store_xmm(_mm_and_ps(vec2::load_xmm(left), vec2::load_xmm(right)));
 }
 
-inline void operator &=(vec2& left, const vec2& right) {
+inline void operator&=(vec2& left, const vec2& right) {
     left = vec2::store_xmm(_mm_and_ps(vec2::load_xmm(left), vec2::load_xmm(right)));
 }
 
-inline void operator &=(vec2& left, const float_t right) {
+inline void operator&=(vec2& left, const float_t right) {
     left = vec2::store_xmm(_mm_and_ps(vec2::load_xmm(left), vec2::load_xmm(right)));
 }
 
-inline vec2 operator ^(const vec2& left, const vec2& right) {
+inline vec2 operator^(const vec2& left, const vec2& right) {
     return vec2::store_xmm(_mm_xor_ps(vec2::load_xmm(left), vec2::load_xmm(right)));
 }
 
-inline vec2 operator ^(const vec2& left, const float_t right) {
+inline vec2 operator^(const vec2& left, const float_t right) {
     return vec2::store_xmm(_mm_xor_ps(vec2::load_xmm(left), vec2::load_xmm(right)));
 }
 
-inline vec2 operator ^(const float_t left, const vec2& right) {
+inline vec2 operator^(const float_t left, const vec2& right) {
     return vec2::store_xmm(_mm_xor_ps(vec2::load_xmm(left), vec2::load_xmm(right)));
 }
 
-inline void operator ^=(vec2& left, const vec2& right) {
+inline void operator^=(vec2& left, const vec2& right) {
     left = vec2::store_xmm(_mm_xor_ps(vec2::load_xmm(left), vec2::load_xmm(right)));
 }
 
-inline void operator ^=(vec2& left, const float_t right) {
+inline void operator^=(vec2& left, const float_t right) {
     left = vec2::store_xmm(_mm_xor_ps(vec2::load_xmm(left), vec2::load_xmm(right)));
 }
 
-inline vec2 operator -(const vec2& left) {
+inline vec2 operator-(const vec2& left) {
     return vec2::store_xmm(_mm_xor_ps(vec2::load_xmm(left), vec2_neg));
 }
 
-inline bool operator ==(const vec2& left, const vec2& right) {
+inline bool operator==(const vec2& left, const vec2& right) {
     return !memcmp(&left, &right, sizeof(vec2));
 }
 
-inline bool operator !=(const vec2& left, const vec2& right) {
-    return !!memcmp(&left, &right, sizeof(vec2));
+inline bool operator!=(const vec2& left, const vec2& right) {
+    return !(left == right);
 }
 
 inline float_t vec2::angle(const vec2& left, const vec2& right) {
@@ -754,8 +754,8 @@ inline vec2 vec2::normalize_rcp(const vec2& left) {
     zt = _mm_mul_ps(xt, xt);
     zt = _mm_sqrt_ss(_mm_hadd_ps(zt, zt));
     if (_mm_cvtss_f32(zt) != 0.0f)
-        zt = _mm_div_ss(vec4::load_xmm(1.0f), zt);
-    return vec2::store_xmm(_mm_mul_ps(xt, _mm_shuffle_ps(zt, zt, 0)));
+        return vec2::store_xmm(_mm_mul_ps(xt, _mm_div_ss(vec2::load_xmm(1.0f), _mm_shuffle_ps(zt, zt, 0))));
+    return vec2::store_xmm(xt);
 }
 
 inline vec2 vec2::rcp(const vec2& left) {
@@ -832,136 +832,136 @@ inline vec3::vec3(float_t x, float_t y, float_t z) : x(x), y(y), z(z) {
 
 }
 
-inline vec3 operator +(const vec3& left, const vec3& right) {
+inline vec3 operator+(const vec3& left, const vec3& right) {
     return vec3::store_xmm(_mm_add_ps(vec3::load_xmm(left), vec3::load_xmm(right)));
 }
 
-inline vec3 operator +(const vec3& left, const float_t right) {
+inline vec3 operator+(const vec3& left, const float_t right) {
     return vec3::store_xmm(_mm_add_ps(vec3::load_xmm(left), vec3::load_xmm(right)));
 }
 
-inline vec3 operator +(const float_t left, const vec3& right) {
+inline vec3 operator+(const float_t left, const vec3& right) {
     return vec3::store_xmm(_mm_add_ps(vec3::load_xmm(left), vec3::load_xmm(right)));
 }
 
-inline void operator +=(vec3& left, const vec3& right) {
+inline void operator+=(vec3& left, const vec3& right) {
     left = vec3::store_xmm(_mm_add_ps(vec3::load_xmm(left), vec3::load_xmm(right)));
 }
 
-inline void operator +=(vec3& left, const float_t right) {
+inline void operator+=(vec3& left, const float_t right) {
     left = vec3::store_xmm(_mm_add_ps(vec3::load_xmm(left), vec3::load_xmm(right)));
 }
 
-inline vec3 operator -(const vec3& left, const vec3& right) {
+inline vec3 operator-(const vec3& left, const vec3& right) {
     return vec3::store_xmm(_mm_sub_ps(vec3::load_xmm(left), vec3::load_xmm(right)));
 }
 
-inline vec3 operator -(const vec3& left, const float_t right) {
+inline vec3 operator-(const vec3& left, const float_t right) {
     return vec3::store_xmm(_mm_sub_ps(vec3::load_xmm(left), vec3::load_xmm(right)));
 }
 
-inline vec3 operator -(const float_t left, const vec3& right) {
+inline vec3 operator-(const float_t left, const vec3& right) {
     return vec3::store_xmm(_mm_sub_ps(vec3::load_xmm(left), vec3::load_xmm(right)));
 }
 
-inline void operator -=(vec3& left, const vec3& right) {
+inline void operator-=(vec3& left, const vec3& right) {
     left = vec3::store_xmm(_mm_sub_ps(vec3::load_xmm(left), vec3::load_xmm(right)));
 }
 
-inline void operator -=(vec3& left, const float_t right) {
+inline void operator-=(vec3& left, const float_t right) {
     left = vec3::store_xmm(_mm_sub_ps(vec3::load_xmm(left), vec3::load_xmm(right)));
 }
 
-inline vec3 operator *(const vec3& left, const vec3& right) {
+inline vec3 operator*(const vec3& left, const vec3& right) {
     return vec3::store_xmm(_mm_mul_ps(vec3::load_xmm(left), vec3::load_xmm(right)));
 }
 
-inline vec3 operator *(const vec3& left, const float_t right) {
+inline vec3 operator*(const vec3& left, const float_t right) {
     return vec3::store_xmm(_mm_mul_ps(vec3::load_xmm(left), vec3::load_xmm(right)));
 }
 
-inline vec3 operator *(const float_t left, const vec3& right) {
+inline vec3 operator*(const float_t left, const vec3& right) {
     return vec3::store_xmm(_mm_mul_ps(vec3::load_xmm(left), vec3::load_xmm(right)));
 }
 
-inline void operator *=(vec3& left, const vec3& right) {
+inline void operator*=(vec3& left, const vec3& right) {
     left = vec3::store_xmm(_mm_mul_ps(vec3::load_xmm(left), vec3::load_xmm(right)));
 }
 
-inline void operator *=(vec3& left, const float_t right) {
+inline void operator*=(vec3& left, const float_t right) {
     left = vec3::store_xmm(_mm_mul_ps(vec3::load_xmm(left), vec3::load_xmm(right)));
 }
 
-inline vec3 operator /(const vec3& left, const vec3& right) {
+inline vec3 operator/(const vec3& left, const vec3& right) {
     return vec3::store_xmm(_mm_div_ps(vec3::load_xmm(left), vec3::load_xmm(right)));
 }
 
-inline vec3 operator /(const vec3& left, const float_t right) {
+inline vec3 operator/(const vec3& left, const float_t right) {
     return vec3::store_xmm(_mm_div_ps(vec3::load_xmm(left), vec3::load_xmm(right)));
 }
 
-inline vec3 operator /(const float_t left, const vec3& right) {
+inline vec3 operator/(const float_t left, const vec3& right) {
     return vec3::store_xmm(_mm_div_ps(vec3::load_xmm(left), vec3::load_xmm(right)));
 }
 
-inline void operator /=(vec3& left, const vec3& right) {
+inline void operator/=(vec3& left, const vec3& right) {
     left = vec3::store_xmm(_mm_div_ps(vec3::load_xmm(left), vec3::load_xmm(right)));
 }
 
-inline void operator /=(vec3& left, const float_t right) {
+inline void operator/=(vec3& left, const float_t right) {
     left = vec3::store_xmm(_mm_div_ps(vec3::load_xmm(left), vec3::load_xmm(right)));
 }
 
-inline vec3 operator &(const vec3& left, const vec3& right) {
+inline vec3 operator&(const vec3& left, const vec3& right) {
     return vec3::store_xmm(_mm_and_ps(vec3::load_xmm(left), vec3::load_xmm(right)));
 }
 
-inline vec3 operator &(const vec3& left, const float_t right) {
+inline vec3 operator&(const vec3& left, const float_t right) {
     return vec3::store_xmm(_mm_and_ps(vec3::load_xmm(left), vec3::load_xmm(right)));
 }
 
-inline vec3 operator &(const float_t left, const vec3& right) {
+inline vec3 operator&(const float_t left, const vec3& right) {
     return vec3::store_xmm(_mm_and_ps(vec3::load_xmm(left), vec3::load_xmm(right)));
 }
 
-inline void operator &=(vec3& left, const vec3& right) {
+inline void operator&=(vec3& left, const vec3& right) {
     left = vec3::store_xmm(_mm_and_ps(vec3::load_xmm(left), vec3::load_xmm(right)));
 }
 
-inline void operator &=(vec3& left, const float_t right) {
+inline void operator&=(vec3& left, const float_t right) {
     left = vec3::store_xmm(_mm_and_ps(vec3::load_xmm(left), vec3::load_xmm(right)));
 }
 
-inline vec3 operator ^(const vec3& left, const vec3& right) {
+inline vec3 operator^(const vec3& left, const vec3& right) {
     return vec3::store_xmm(_mm_xor_ps(vec3::load_xmm(left), vec3::load_xmm(right)));
 }
 
-inline vec3 operator ^(const vec3& left, const float_t right) {
+inline vec3 operator^(const vec3& left, const float_t right) {
     return vec3::store_xmm(_mm_xor_ps(vec3::load_xmm(left), vec3::load_xmm(right)));
 }
 
-inline vec3 operator ^(const float_t left, const vec3& right) {
+inline vec3 operator^(const float_t left, const vec3& right) {
     return vec3::store_xmm(_mm_xor_ps(vec3::load_xmm(left), vec3::load_xmm(right)));
 }
 
-inline void operator ^=(vec3& left, const vec3& right) {
+inline void operator^=(vec3& left, const vec3& right) {
     left = vec3::store_xmm(_mm_xor_ps(vec3::load_xmm(left), vec3::load_xmm(right)));
 }
 
-inline void operator ^=(vec3& left, const float_t right) {
+inline void operator^=(vec3& left, const float_t right) {
     left = vec3::store_xmm(_mm_xor_ps(vec3::load_xmm(left), vec3::load_xmm(right)));
 }
 
-inline vec3 operator -(const vec3& left) {
+inline vec3 operator-(const vec3& left) {
     return vec3::store_xmm(_mm_xor_ps(vec3::load_xmm(left), vec3_neg));
 }
 
-inline bool operator ==(const vec3& left, const vec3& right) {
+inline bool operator==(const vec3& left, const vec3& right) {
     return !memcmp(&left, &right, sizeof(vec3));
 }
 
-inline bool operator !=(const vec3& left, const vec3& right) {
-    return !!memcmp(&left, &right, sizeof(vec3));
+inline bool operator!=(const vec3& left, const vec3& right) {
+    return !(left == right);
 }
 
 inline __m128 vec3::load_xmm(const float_t data) {
@@ -1086,8 +1086,8 @@ inline vec3 vec3::normalize_rcp(const vec3& left) {
     zt = _mm_hadd_ps(zt, zt);
     zt = _mm_sqrt_ss(_mm_hadd_ps(zt, zt));
     if (_mm_cvtss_f32(zt) != 0.0f)
-        zt = _mm_div_ss(vec4::load_xmm(1.0f), zt);
-    return vec3::store_xmm(_mm_mul_ps(xt, _mm_shuffle_ps(zt, zt, 0)));
+        return vec3::store_xmm(_mm_mul_ps(xt, _mm_div_ss(vec3::load_xmm(1.0f), _mm_shuffle_ps(zt, zt, 0))));
+    return vec3::store_xmm(xt);
 }
 
 inline vec3 vec3::rcp(const vec3& left) {
@@ -1177,136 +1177,136 @@ inline vec4::vec4(float_t x, float_t y, float_t z, float_t w) : x(x), y(y), z(z)
 
 }
 
-inline vec4 operator +(const vec4& left, const vec4& right) {
+inline vec4 operator+(const vec4& left, const vec4& right) {
     return vec4::store_xmm(_mm_add_ps(vec4::load_xmm(left), vec4::load_xmm(right)));
 }
 
-inline vec4 operator +(const vec4& left, const float_t right) {
+inline vec4 operator+(const vec4& left, const float_t right) {
     return vec4::store_xmm(_mm_add_ps(vec4::load_xmm(left), vec4::load_xmm(right)));
 }
 
-inline vec4 operator +(const float_t left, const vec4& right) {
+inline vec4 operator+(const float_t left, const vec4& right) {
     return vec4::store_xmm(_mm_add_ps(vec4::load_xmm(left), vec4::load_xmm(right)));
 }
 
-inline void operator +=(vec4& left, const vec4& right) {
+inline void operator+=(vec4& left, const vec4& right) {
     left = vec4::store_xmm(_mm_add_ps(vec4::load_xmm(left), vec4::load_xmm(right)));
 }
 
-inline void operator +=(vec4& left, const float_t right) {
+inline void operator+=(vec4& left, const float_t right) {
     left = vec4::store_xmm(_mm_add_ps(vec4::load_xmm(left), vec4::load_xmm(right)));
 }
 
-inline vec4 operator -(const vec4& left, const vec4& right) {
+inline vec4 operator-(const vec4& left, const vec4& right) {
     return vec4::store_xmm(_mm_sub_ps(vec4::load_xmm(left), vec4::load_xmm(right)));
 }
 
-inline vec4 operator -(const vec4& left, const float_t right) {
+inline vec4 operator-(const vec4& left, const float_t right) {
     return vec4::store_xmm(_mm_sub_ps(vec4::load_xmm(left), vec4::load_xmm(right)));
 }
 
-inline vec4 operator -(const float_t left, const vec4& right) {
+inline vec4 operator-(const float_t left, const vec4& right) {
     return vec4::store_xmm(_mm_sub_ps(vec4::load_xmm(left), vec4::load_xmm(right)));
 }
 
-inline void operator -=(vec4& left, const vec4& right) {
+inline void operator-=(vec4& left, const vec4& right) {
     left = vec4::store_xmm(_mm_sub_ps(vec4::load_xmm(left), vec4::load_xmm(right)));
 }
 
-inline void operator -=(vec4& left, const float_t right) {
+inline void operator-=(vec4& left, const float_t right) {
     left = vec4::store_xmm(_mm_sub_ps(vec4::load_xmm(left), vec4::load_xmm(right)));
 }
 
-inline vec4 operator *(const vec4& left, const vec4& right) {
+inline vec4 operator*(const vec4& left, const vec4& right) {
     return vec4::store_xmm(_mm_mul_ps(vec4::load_xmm(left), vec4::load_xmm(right)));
 }
 
-inline vec4 operator *(const vec4& left, const float_t right) {
+inline vec4 operator*(const vec4& left, const float_t right) {
     return vec4::store_xmm(_mm_mul_ps(vec4::load_xmm(left), vec4::load_xmm(right)));
 }
 
-inline vec4 operator *(const float_t left, const vec4& right) {
+inline vec4 operator*(const float_t left, const vec4& right) {
     return vec4::store_xmm(_mm_mul_ps(vec4::load_xmm(left), vec4::load_xmm(right)));
 }
 
-inline void operator *=(vec4& left, const vec4& right) {
+inline void operator*=(vec4& left, const vec4& right) {
     left = vec4::store_xmm(_mm_mul_ps(vec4::load_xmm(left), vec4::load_xmm(right)));
 }
 
-inline void operator *=(vec4& left, const float_t right) {
+inline void operator*=(vec4& left, const float_t right) {
     left = vec4::store_xmm(_mm_mul_ps(vec4::load_xmm(left), vec4::load_xmm(right)));
 }
 
-inline vec4 operator /(const vec4& left, const vec4& right) {
+inline vec4 operator/(const vec4& left, const vec4& right) {
     return vec4::store_xmm(_mm_div_ps(vec4::load_xmm(left), vec4::load_xmm(right)));
 }
 
-inline vec4 operator /(const vec4& left, const float_t right) {
+inline vec4 operator/(const vec4& left, const float_t right) {
     return vec4::store_xmm(_mm_div_ps(vec4::load_xmm(left), vec4::load_xmm(right)));
 }
 
-inline vec4 operator /(const float_t left, const vec4& right) {
+inline vec4 operator/(const float_t left, const vec4& right) {
     return vec4::store_xmm(_mm_div_ps(vec4::load_xmm(left), vec4::load_xmm(right)));
 }
 
-inline void operator /=(vec4& left, const vec4& right) {
+inline void operator/=(vec4& left, const vec4& right) {
     left = vec4::store_xmm(_mm_div_ps(vec4::load_xmm(left), vec4::load_xmm(right)));
 }
 
-inline void operator /=(vec4& left, const float_t right) {
+inline void operator/=(vec4& left, const float_t right) {
     left = vec4::store_xmm(_mm_div_ps(vec4::load_xmm(left), vec4::load_xmm(right)));
 }
 
-inline vec4 operator &(const vec4& left, const vec4& right) {
+inline vec4 operator&(const vec4& left, const vec4& right) {
     return vec4::store_xmm(_mm_and_ps(vec4::load_xmm(left), vec4::load_xmm(right)));
 }
 
-inline vec4 operator &(const vec4& left, const float_t right) {
+inline vec4 operator&(const vec4& left, const float_t right) {
     return vec4::store_xmm(_mm_and_ps(vec4::load_xmm(left), vec4::load_xmm(right)));
 }
 
-inline vec4 operator &(const float_t left, const vec4& right) {
+inline vec4 operator&(const float_t left, const vec4& right) {
     return vec4::store_xmm(_mm_and_ps(vec4::load_xmm(left), vec4::load_xmm(right)));
 }
 
-inline void operator &=(vec4& left, const vec4& right) {
+inline void operator&=(vec4& left, const vec4& right) {
     left = vec4::store_xmm(_mm_and_ps(vec4::load_xmm(left), vec4::load_xmm(right)));
 }
 
-inline void operator &=(vec4& left, const float_t right) {
+inline void operator&=(vec4& left, const float_t right) {
     left = vec4::store_xmm(_mm_and_ps(vec4::load_xmm(left), vec4::load_xmm(right)));
 }
 
-inline vec4 operator ^(const vec4& left, const vec4& right) {
+inline vec4 operator^(const vec4& left, const vec4& right) {
     return vec4::store_xmm(_mm_xor_ps(vec4::load_xmm(left), vec4::load_xmm(right)));
 }
 
-inline vec4 operator ^(const vec4& left, const float_t right) {
+inline vec4 operator^(const vec4& left, const float_t right) {
     return vec4::store_xmm(_mm_xor_ps(vec4::load_xmm(left), vec4::load_xmm(right)));
 }
 
-inline vec4 operator ^(const float_t left, const vec4& right) {
+inline vec4 operator^(const float_t left, const vec4& right) {
     return vec4::store_xmm(_mm_xor_ps(vec4::load_xmm(left), vec4::load_xmm(right)));
 }
 
-inline void operator ^=(vec4& left, const vec4& right) {
+inline void operator^=(vec4& left, const vec4& right) {
     left = vec4::store_xmm(_mm_xor_ps(vec4::load_xmm(left), vec4::load_xmm(right)));
 }
 
-inline void operator ^=(vec4& left, const float_t right) {
+inline void operator^=(vec4& left, const float_t right) {
     left = vec4::store_xmm(_mm_xor_ps(vec4::load_xmm(left), vec4::load_xmm(right)));
 }
 
-inline vec4 operator -(const vec4& left) {
+inline vec4 operator-(const vec4& left) {
     return vec4::store_xmm(_mm_xor_ps(vec4::load_xmm(left), vec4_neg));
 }
 
-inline bool operator ==(const vec4& left, const vec4& right) {
+inline bool operator==(const vec4& left, const vec4& right) {
     return !memcmp(&left, &right, sizeof(vec4));
 }
 
-inline bool operator !=(const vec4& left, const vec4& right) {
-    return !!memcmp(&left, &right, sizeof(vec4));
+inline bool operator!=(const vec4& left, const vec4& right) {
+    return !(left == right);
 }
 
 inline __m128 vec4::load_xmm(const float_t data) {
@@ -1421,8 +1421,8 @@ inline vec4 vec4::normalize_rcp(const vec4& left) {
     zt = _mm_hadd_ps(zt, zt);
     zt = _mm_sqrt_ss(_mm_hadd_ps(zt, zt));
     if (_mm_cvtss_f32(zt) != 0.0f)
-        zt = _mm_div_ss(vec4::load_xmm(1.0f), zt);
-    return vec4::store_xmm(_mm_mul_ps(xt, _mm_shuffle_ps(zt, zt, 0)));
+        return vec4::store_xmm(_mm_mul_ps(xt, _mm_div_ss(vec4::load_xmm(1.0f), _mm_shuffle_ps(zt, zt, 0))));
+    return vec4::store_xmm(xt);
 }
 
 inline vec4 vec4::rcp(const vec4& left) {
@@ -1499,27 +1499,27 @@ inline vec2i::vec2i(int32_t x, int32_t y) : x(x), y(y) {
 
 }
 
-inline vec2i operator +(const vec2i& left, const vec2i& right) {
+inline vec2i operator+(const vec2i& left, const vec2i& right) {
     return vec2i::store_xmm(_mm_add_epi32(vec2i::load_xmm(left), vec2i::load_xmm(right)));
 }
 
-inline vec2i operator +(const vec2i& left, const int32_t right) {
+inline vec2i operator+(const vec2i& left, const int32_t right) {
     return vec2i::store_xmm(_mm_add_epi32(vec2i::load_xmm(left), vec2i::load_xmm(right)));
 }
 
-inline vec2i operator +(const int32_t left, const vec2i& right) {
+inline vec2i operator+(const int32_t left, const vec2i& right) {
     return vec2i::store_xmm(_mm_add_epi32(vec2i::load_xmm(left), vec2i::load_xmm(right)));
 }
 
-inline vec2i operator -(const vec2i& left, const vec2i& right) {
+inline vec2i operator-(const vec2i& left, const vec2i& right) {
     return vec2i::store_xmm(_mm_sub_epi32(vec2i::load_xmm(left), vec2i::load_xmm(right)));
 }
 
-inline vec2i operator -(const vec2i& left, const int32_t right) {
+inline vec2i operator-(const vec2i& left, const int32_t right) {
     return vec2i::store_xmm(_mm_sub_epi32(vec2i::load_xmm(left), vec2i::load_xmm(right)));
 }
 
-inline vec2i operator -(const int32_t left, const vec2i& right) {
+inline vec2i operator-(const int32_t left, const vec2i& right) {
     return vec2i::store_xmm(_mm_sub_epi32(vec2i::load_xmm(left), vec2i::load_xmm(right)));
 }
 
@@ -1578,27 +1578,27 @@ inline vec3i::vec3i(int32_t x, int32_t y, int32_t z) : x(x), y(y), z(z) {
 
 }
 
-inline vec3i operator +(const vec3i& left, const vec3i& right) {
+inline vec3i operator+(const vec3i& left, const vec3i& right) {
     return vec3i::store_xmm(_mm_add_epi32(vec3i::load_xmm(left), vec3i::load_xmm(right)));
 }
 
-inline vec3i operator +(const vec3i& left, const int32_t right) {
+inline vec3i operator+(const vec3i& left, const int32_t right) {
     return vec3i::store_xmm(_mm_add_epi32(vec3i::load_xmm(left), vec3i::load_xmm(right)));
 }
 
-inline vec3i operator +(const int32_t left, const vec3i& right) {
+inline vec3i operator+(const int32_t left, const vec3i& right) {
     return vec3i::store_xmm(_mm_add_epi32(vec3i::load_xmm(left), vec3i::load_xmm(right)));
 }
 
-inline vec3i operator -(const vec3i& left, const vec3i& right) {
+inline vec3i operator-(const vec3i& left, const vec3i& right) {
     return vec3i::store_xmm(_mm_sub_epi32(vec3i::load_xmm(left), vec3i::load_xmm(right)));
 }
 
-inline vec3i operator -(const vec3i& left, const int32_t right) {
+inline vec3i operator-(const vec3i& left, const int32_t right) {
     return vec3i::store_xmm(_mm_sub_epi32(vec3i::load_xmm(left), vec3i::load_xmm(right)));
 }
 
-inline vec3i operator -(const int32_t left, const vec3i& right) {
+inline vec3i operator-(const int32_t left, const vec3i& right) {
     return vec3i::store_xmm(_mm_sub_epi32(vec3i::load_xmm(left), vec3i::load_xmm(right)));
 }
 
@@ -1659,27 +1659,27 @@ inline vec4i::vec4i(int32_t x, int32_t y, int32_t z, int32_t w) : x(x), y(y), z(
 
 }
 
-inline vec4i operator +(const vec4i& left, const vec4i& right) {
+inline vec4i operator+(const vec4i& left, const vec4i& right) {
     return vec4i::store_xmm(_mm_add_epi32(vec4i::load_xmm(left), vec4i::load_xmm(right)));
 }
 
-inline vec4i operator +(const vec4i& left, const int32_t right) {
+inline vec4i operator+(const vec4i& left, const int32_t right) {
     return vec4i::store_xmm(_mm_add_epi32(vec4i::load_xmm(left), vec4i::load_xmm(right)));
 }
 
-inline vec4i operator +(const int32_t left, const vec4i& right) {
+inline vec4i operator+(const int32_t left, const vec4i& right) {
     return vec4i::store_xmm(_mm_add_epi32(vec4i::load_xmm(left), vec4i::load_xmm(right)));
 }
 
-inline vec4i operator -(const vec4i& left, const vec4i& right) {
+inline vec4i operator-(const vec4i& left, const vec4i& right) {
     return vec4i::store_xmm(_mm_sub_epi32(vec4i::load_xmm(left), vec4i::load_xmm(right)));
 }
 
-inline vec4i operator -(const vec4i& left, const int32_t right) {
+inline vec4i operator-(const vec4i& left, const int32_t right) {
     return vec4i::store_xmm(_mm_sub_epi32(vec4i::load_xmm(left), vec4i::load_xmm(right)));
 }
 
-inline vec4i operator -(const int32_t left, const vec4i& right) {
+inline vec4i operator-(const int32_t left, const vec4i& right) {
     return vec4i::store_xmm(_mm_sub_epi32(vec4i::load_xmm(left), vec4i::load_xmm(right)));
 }
 
@@ -1763,136 +1763,136 @@ inline vec2d vec2d::store_xmm(const __m128d&& data) {
     return _data;
 }
 
-inline vec2d operator +(const vec2d& left, const vec2d& right) {
+inline vec2d operator+(const vec2d& left, const vec2d& right) {
     return vec2d::store_xmm(_mm_add_pd(vec2d::load_xmm(left), vec2d::load_xmm(right)));
 }
 
-inline vec2d operator +(const vec2d& left, const double_t right) {
+inline vec2d operator+(const vec2d& left, const double_t right) {
     return vec2d::store_xmm(_mm_add_pd(vec2d::load_xmm(left), vec2d::load_xmm(right)));
 }
 
-inline vec2d operator +(const double_t left, const vec2d& right) {
+inline vec2d operator+(const double_t left, const vec2d& right) {
     return vec2d::store_xmm(_mm_add_pd(vec2d::load_xmm(left), vec2d::load_xmm(right)));
 }
 
-inline void operator +=(vec2d& left, const vec2d& right) {
+inline void operator+=(vec2d& left, const vec2d& right) {
     left = vec2d::store_xmm(_mm_add_pd(vec2d::load_xmm(left), vec2d::load_xmm(right)));
 }
 
-inline void operator +=(vec2d& left, const double_t right) {
+inline void operator+=(vec2d& left, const double_t right) {
     left = vec2d::store_xmm(_mm_add_pd(vec2d::load_xmm(left), vec2d::load_xmm(right)));
 }
 
-inline vec2d operator -(const vec2d& left, const vec2d& right) {
+inline vec2d operator-(const vec2d& left, const vec2d& right) {
     return vec2d::store_xmm(_mm_sub_pd(vec2d::load_xmm(left), vec2d::load_xmm(right)));
 }
 
-inline vec2d operator -(const vec2d& left, const double_t right) {
+inline vec2d operator-(const vec2d& left, const double_t right) {
     return vec2d::store_xmm(_mm_sub_pd(vec2d::load_xmm(left), vec2d::load_xmm(right)));
 }
 
-inline vec2d operator -(const double_t left, const vec2d& right) {
+inline vec2d operator-(const double_t left, const vec2d& right) {
     return vec2d::store_xmm(_mm_sub_pd(vec2d::load_xmm(left), vec2d::load_xmm(right)));
 }
 
-inline void operator -=(vec2d& left, const vec2d& right) {
+inline void operator-=(vec2d& left, const vec2d& right) {
     left = vec2d::store_xmm(_mm_sub_pd(vec2d::load_xmm(left), vec2d::load_xmm(right)));
 }
 
-inline void operator -=(vec2d& left, const double_t right) {
+inline void operator-=(vec2d& left, const double_t right) {
     left = vec2d::store_xmm(_mm_sub_pd(vec2d::load_xmm(left), vec2d::load_xmm(right)));
 }
 
-inline vec2d operator *(const vec2d& left, const vec2d& right) {
+inline vec2d operator*(const vec2d& left, const vec2d& right) {
     return vec2d::store_xmm(_mm_mul_pd(vec2d::load_xmm(left), vec2d::load_xmm(right)));
 }
 
-inline vec2d operator *(const vec2d& left, const double_t right) {
+inline vec2d operator*(const vec2d& left, const double_t right) {
     return vec2d::store_xmm(_mm_mul_pd(vec2d::load_xmm(left), vec2d::load_xmm(right)));
 }
 
-inline vec2d operator *(const double_t left, const vec2d& right) {
+inline vec2d operator*(const double_t left, const vec2d& right) {
     return vec2d::store_xmm(_mm_mul_pd(vec2d::load_xmm(left), vec2d::load_xmm(right)));
 }
 
-inline void operator *=(vec2d& left, const vec2d& right) {
+inline void operator*=(vec2d& left, const vec2d& right) {
     left = vec2d::store_xmm(_mm_mul_pd(vec2d::load_xmm(left), vec2d::load_xmm(right)));
 }
 
-inline void operator *=(vec2d& left, const double_t right) {
+inline void operator*=(vec2d& left, const double_t right) {
     left = vec2d::store_xmm(_mm_mul_pd(vec2d::load_xmm(left), vec2d::load_xmm(right)));
 }
 
-inline vec2d operator /(const vec2d& left, const vec2d& right) {
+inline vec2d operator/(const vec2d& left, const vec2d& right) {
     return vec2d::store_xmm(_mm_div_pd(vec2d::load_xmm(left), vec2d::load_xmm(right)));
 }
 
-inline vec2d operator /(const vec2d& left, const double_t right) {
+inline vec2d operator/(const vec2d& left, const double_t right) {
     return vec2d::store_xmm(_mm_div_pd(vec2d::load_xmm(left), vec2d::load_xmm(right)));
 }
 
-inline vec2d operator /(const double_t left, const vec2d& right) {
+inline vec2d operator/(const double_t left, const vec2d& right) {
     return vec2d::store_xmm(_mm_div_pd(vec2d::load_xmm(left), vec2d::load_xmm(right)));
 }
 
-inline void operator /=(vec2d& left, const vec2d& right) {
+inline void operator/=(vec2d& left, const vec2d& right) {
     left = vec2d::store_xmm(_mm_div_pd(vec2d::load_xmm(left), vec2d::load_xmm(right)));
 }
 
-inline void operator /=(vec2d& left, const double_t right) {
+inline void operator/=(vec2d& left, const double_t right) {
     left = vec2d::store_xmm(_mm_div_pd(vec2d::load_xmm(left), vec2d::load_xmm(right)));
 }
 
-inline vec2d operator &(const vec2d& left, const vec2d& right) {
+inline vec2d operator&(const vec2d& left, const vec2d& right) {
     return vec2d::store_xmm(_mm_and_pd(vec2d::load_xmm(left), vec2d::load_xmm(right)));
 }
 
-inline vec2d operator &(const vec2d& left, const double_t right) {
+inline vec2d operator&(const vec2d& left, const double_t right) {
     return vec2d::store_xmm(_mm_and_pd(vec2d::load_xmm(left), vec2d::load_xmm(right)));
 }
 
-inline vec2d operator &(const double_t left, const vec2d& right) {
+inline vec2d operator&(const double_t left, const vec2d& right) {
     return vec2d::store_xmm(_mm_and_pd(vec2d::load_xmm(left), vec2d::load_xmm(right)));
 }
 
-inline void operator &=(vec2d& left, const vec2d& right) {
+inline void operator&=(vec2d& left, const vec2d& right) {
     left = vec2d::store_xmm(_mm_and_pd(vec2d::load_xmm(left), vec2d::load_xmm(right)));
 }
 
-inline void operator &=(vec2d& left, const double_t right) {
+inline void operator&=(vec2d& left, const double_t right) {
     left = vec2d::store_xmm(_mm_and_pd(vec2d::load_xmm(left), vec2d::load_xmm(right)));
 }
 
-inline vec2d operator ^(const vec2d& left, const vec2d& right) {
+inline vec2d operator^(const vec2d& left, const vec2d& right) {
     return vec2d::store_xmm(_mm_xor_pd(vec2d::load_xmm(left), vec2d::load_xmm(right)));
 }
 
-inline vec2d operator ^(const vec2d& left, const double_t right) {
+inline vec2d operator^(const vec2d& left, const double_t right) {
     return vec2d::store_xmm(_mm_xor_pd(vec2d::load_xmm(left), vec2d::load_xmm(right)));
 }
 
-inline vec2d operator ^(const double_t left, const vec2d& right) {
+inline vec2d operator^(const double_t left, const vec2d& right) {
     return vec2d::store_xmm(_mm_xor_pd(vec2d::load_xmm(left), vec2d::load_xmm(right)));
 }
 
-inline void operator ^=(vec2d& left, const vec2d& right) {
+inline void operator^=(vec2d& left, const vec2d& right) {
     left = vec2d::store_xmm(_mm_xor_pd(vec2d::load_xmm(left), vec2d::load_xmm(right)));
 }
 
-inline void operator ^=(vec2d& left, const double_t right) {
+inline void operator^=(vec2d& left, const double_t right) {
     left = vec2d::store_xmm(_mm_xor_pd(vec2d::load_xmm(left), vec2d::load_xmm(right)));
 }
 
-inline vec2d operator -(const vec2d& left) {
+inline vec2d operator-(const vec2d& left) {
     return vec2d::store_xmm(_mm_xor_pd(vec2d::load_xmm(left), vec2d_neg));
 }
 
-inline bool operator ==(const vec2d& left, const vec2d& right) {
+inline bool operator==(const vec2d& left, const vec2d& right) {
     return !memcmp(&left, &right, sizeof(vec2d));
 }
 
-inline bool operator !=(const vec2d& left, const vec2d& right) {
-    return !!memcmp(&left, &right, sizeof(vec2d));
+inline bool operator!=(const vec2d& left, const vec2d& right) {
+    return !(left == right);
 }
 
 inline double_t vec2d::angle(const vec2d& left, const vec2d& right) {
@@ -1975,8 +1975,8 @@ inline vec2d vec2d::normalize_rcp(const vec2d& left) {
     zt = _mm_mul_pd(xt, xt);
     zt = _mm_sqrt_sd(_mm_hadd_pd(zt, zt), zt);
     if (_mm_cvtsd_f64(zt) != 0.0f)
-        zt = _mm_div_sd(vec2d::load_xmm(1.0), zt);
-    return vec2d::store_xmm(_mm_mul_pd(xt, _mm_shuffle_pd(zt, zt, 0)));
+        return vec2d::store_xmm(_mm_mul_pd(xt, _mm_div_sd(vec2d::load_xmm(1.0f), _mm_shuffle_pd(zt, zt, 0))));
+    return vec2d::store_xmm(xt);
 }
 
 inline vec2d vec2d::rcp(const vec2d& left) {
@@ -2186,8 +2186,8 @@ inline void vec4_to_vec4u16(const vec4& src, vec4u16& dst) {
 }
 
 inline void vec2h_to_vec2(const vec2h& src, vec2& dst) {
-    extern bool f16c;
-    if (f16c) {
+    extern bool cpu_caps_f16c;
+    if (cpu_caps_f16c) {
         dst = vec2::store_xmm(_mm_cvtph_ps(_mm_cvtsi32_si128(*(int32_t*)&src)));
         return;
     }
@@ -2203,8 +2203,8 @@ inline void vec3h_to_vec3(const vec3h& src, vec3& dst) {
 }
 
 inline void vec4h_to_vec4(const vec4h& src, vec4& dst) {
-    extern bool f16c;
-    if (f16c) {
+    extern bool cpu_caps_f16c;
+    if (cpu_caps_f16c) {
         dst = vec4::store_xmm(_mm_cvtph_ps(_mm_cvtsi64_si128(*(int64_t*)&src)));
         return;
     }
@@ -2216,8 +2216,8 @@ inline void vec4h_to_vec4(const vec4h& src, vec4& dst) {
 }
 
 inline void vec2_to_vec2h(const vec2& src, vec2h& dst) {
-    extern bool f16c;
-    if (f16c) {
+    extern bool cpu_caps_f16c;
+    if (cpu_caps_f16c) {
         *(int32_t*)&dst = _mm_cvtsi128_si32(_mm_cvtps_ph(vec2::load_xmm(src), _MM_FROUND_CUR_DIRECTION));
         return;
     }
@@ -2233,8 +2233,8 @@ inline void vec3_to_vec3h(const vec3& src, vec3h& dst) {
 }
 
 inline void vec4_to_vec4h(const vec4& src, vec4h& dst) {
-    extern bool f16c;
-    if (f16c) {
+    extern bool cpu_caps_f16c;
+    if (cpu_caps_f16c) {
         *(int64_t*)&dst = _mm_cvtsi128_si64(_mm_cvtps_ph(vec4::load_xmm(src), _MM_FROUND_CUR_DIRECTION));
         return;
     }

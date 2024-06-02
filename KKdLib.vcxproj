@@ -229,6 +229,7 @@
     <ClInclude Include="io\memory_stream.hpp" />
     <ClInclude Include="io\path.hpp" />
     <ClInclude Include="io\stream.hpp" />
+    <ClInclude Include="key_val.hpp" />
     <ClInclude Include="kf.hpp" />
     <ClInclude Include="mat.hpp" />
     <ClInclude Include="prj\algorithm.hpp" />
@@ -239,6 +240,7 @@
     <ClInclude Include="prj\vector_pair.hpp" />
     <ClInclude Include="prj\vector_pair_combine.hpp" />
     <ClInclude Include="quat.hpp" />
+    <ClInclude Include="rectangle.hpp" />
     <ClInclude Include="str_utils.hpp" />
     <ClInclude Include="time.hpp" />
     <ClInclude Include="txp.hpp" />
@@ -267,6 +269,7 @@
     <ClCompile Include="io\memory_stream.cpp" />
     <ClCompile Include="io\path.cpp" />
     <ClCompile Include="io\stream.cpp" />
+    <ClCompile Include="key_val.cpp" />
     <ClCompile Include="kf.cpp" />
     <ClCompile Include="mat.cpp" />
     <ClCompile Include="prj\stack_allocator.cpp" />

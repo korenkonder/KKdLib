@@ -5,6 +5,7 @@
 
 #include "path.hpp"
 #include "../str_utils.hpp"
+#include "file_stream.hpp"
 
 bool path_check_path_exists(const char* path) {
     wchar_t* path_temp = utf8_to_utf16(path);
@@ -68,7 +69,7 @@ std::vector<std::string> path_get_files(const char* path) {
 
     std::wstring dir;
     dir.assign(dir_temp, dir_len);
-    if (dir.size() && dir.back() != L'\\')
+    if (dir.size() && dir.back() != L'\\' && dir.back() != L'/')
         dir.push_back(L'\\');
     dir.push_back(L'*');
     free_def(dir_temp);
@@ -98,7 +99,7 @@ std::vector<std::wstring> path_get_files(const wchar_t* path) {
 
     std::wstring dir;
     dir.assign(path, dir_len);
-    if (dir.size() && dir.back() != L'\\')
+    if (dir.size() && dir.back() != L'\\' && dir.back() != L'/')
         dir.push_back(L'\\');
     dir.push_back(L'*');
 
@@ -128,7 +129,7 @@ std::vector<std::string> path_get_directories(
     std::wstring dir;
     std::wstring temp;
     dir.assign(dir_temp, dir_len);
-    if (dir.size() && dir.back() != L'\\')
+    if (dir.size() && dir.back() != L'\\' && dir.back() != L'/')
         dir.push_back(L'\\');
     temp.assign(dir);
     dir.push_back(L'*');
@@ -176,13 +177,13 @@ std::vector<std::string> path_get_directories(
 }
 
 std::vector<std::wstring> path_get_directories(
-    const wchar_t* path, wchar_t** exclude_list, size_t exclude_count) {
+    const wchar_t* path, const wchar_t** exclude_list, size_t exclude_count) {
     size_t dir_len = utf16_length(path);
 
     std::wstring dir;
     std::wstring temp;
     dir.assign(path, dir_len);
-    if (dir.size() && dir.back() != L'\\')
+    if (dir.size() && dir.back() != L'\\' && dir.back() != L'/')
         dir.push_back(L'\\');
     temp.assign(dir);
     dir.push_back(L'*');
@@ -234,7 +235,7 @@ std::vector<std::string> path_get_directories_recursive(
     std::wstring dir;
     std::wstring temp;
     dir.assign(dir_temp, dir_len);
-    if (dir.size() && dir.back() != L'\\')
+    if (dir.size() && dir.back() != L'\\' && dir.back() != L'/')
         dir.push_back(L'\\');
     temp.assign(dir);
     dir.push_back(L'*');
@@ -325,7 +326,7 @@ std::vector<std::wstring> path_get_directories_recursive(
     std::wstring dir;
     std::wstring temp;
     dir.assign(path, dir_len);
-    if (dir.size() && dir.back() != L'\\')
+    if (dir.size() && dir.back() != L'\\' && dir.back() != L'/')
         dir.push_back(L'\\');
     temp.assign(dir);
     dir.push_back(L'*');
@@ -425,4 +426,122 @@ void path_get_full_path(std::wstring& str) {
     buf[0] = 0;
     GetFullPathNameW(str.c_str(), MAX_PATH * 2, buf, 0);
     str.assign(buf);
+}
+
+bool path_create_file(const char* path) {
+    file_stream fs;
+    fs.open(path, "wb");
+    bool ret = fs.check_not_null();
+    fs.close();
+    return ret;
+}
+
+bool path_create_file(const wchar_t* path) {
+    file_stream fs;
+    fs.open(path, L"wb");
+    bool ret = fs.check_not_null();
+    fs.close();
+    return ret;
+}
+
+bool path_create_directory(const char* path) {
+    const char* _path = path;
+    while (true) {
+        const char* c = strchr(_path, '\\');
+        if (!c)
+            c = strchr(_path, '/');
+
+        if (!c)
+            break;
+
+        _path = c + 1;
+        std::wstring temp = utf8_to_utf16(std::string(path, c - path));
+        if (!path_check_directory_exists(temp.c_str()) && !CreateDirectoryW(temp.c_str(), 0))
+            return false;
+    }
+
+    wchar_t* path_temp = utf8_to_utf16(path);
+    bool ret = path_check_directory_exists(path_temp) || CreateDirectoryW(path_temp, 0);
+    free_def(path_temp);
+    return ret;
+}
+
+bool path_create_directory(const wchar_t* path) {
+    const wchar_t* _path = path;
+    while (true) {
+        const wchar_t* c = wcschr(_path, L'\\');
+        if (!c)
+            c = wcschr(_path, L'/');
+
+        if (!c)
+            break;
+
+        _path = c + 1;
+        std::wstring temp(path, c - path);
+        if (!path_check_directory_exists(temp.c_str()) && !CreateDirectoryW(temp.c_str(), 0))
+            return false;
+    }
+
+    return path_check_directory_exists(path) || CreateDirectoryW(path, 0);
+}
+
+bool path_delete_file(const char* path) {
+    wchar_t* path_temp = utf8_to_utf16(path);
+    bool ret = !path_check_file_exists(path_temp) || DeleteFileW(path_temp);
+    free_def(path_temp);
+    return ret;
+}
+
+bool path_delete_file(const wchar_t* path) {
+    return !path_check_file_exists(path) || DeleteFileW(path);
+}
+
+bool path_delete_directory(const char* path) {
+    std::string dir;
+    dir.assign(path);
+    if (dir.size() && dir.back() != L'\\' && dir.back() != L'/')
+        dir.push_back(L'\\');
+
+    std::vector<std::string> files = path_get_files(path);
+    for (std::string& i : files)
+        path_delete_file((dir + i).c_str());
+
+    std::vector<std::string> directories = path_get_directories(path);
+    for (std::string& i : directories)
+        path_delete_directory((dir + i).c_str());
+
+    wchar_t* path_temp = utf8_to_utf16(path);
+    bool ret = !path_check_directory_exists(path_temp) || RemoveDirectoryW(path_temp);
+    free_def(path_temp);
+    return ret;
+}
+
+bool path_delete_directory(const wchar_t* path) {
+    std::wstring dir;
+    dir.assign(path);
+    if (dir.size() && dir.back() != L'\\' && dir.back() != L'/')
+        dir.push_back(L'\\');
+
+    std::vector<std::wstring> files = path_get_files(path);
+    for (std::wstring& i : files)
+        path_delete_file((dir + i).c_str());
+
+    std::vector<std::wstring> directories = path_get_directories(path);
+    for (std::wstring& i : directories)
+        path_delete_directory((dir + i).c_str());
+
+    return !path_check_directory_exists(path) || RemoveDirectoryW(path);
+}
+
+bool path_rename_file(const char* old_path, const char* new_path) {
+    wchar_t* old_path_temp = utf8_to_utf16(old_path);
+    wchar_t* new_path_temp = utf8_to_utf16(new_path);
+    bool ret = !_wrename(old_path_temp, new_path_temp);
+    free_def(old_path_temp);
+    free_def(new_path_temp);
+    return ret;
+}
+
+bool path_rename_file(const wchar_t* old_path, const wchar_t* new_path) {
+    return !_wrename(old_path, new_path);
 }
