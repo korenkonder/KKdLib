@@ -243,7 +243,6 @@
     <ClInclude Include="rectangle.hpp" />
     <ClInclude Include="str_utils.hpp" />
     <ClInclude Include="time.hpp" />
-    <ClInclude Include="txp.hpp" />
     <ClInclude Include="types.hpp" />
     <ClInclude Include="vec.hpp" />
     <ClInclude Include="waitable_timer.hpp" />
@@ -277,7 +276,6 @@
     <ClCompile Include="quat.cpp" />
     <ClCompile Include="str_utils.cpp" />
     <ClCompile Include="time.cpp" />
-    <ClCompile Include="txp.cpp" />
     <ClCompile Include="vec.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
