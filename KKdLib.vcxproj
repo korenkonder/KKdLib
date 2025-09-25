@@ -213,6 +213,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="aes.hpp" />
+    <ClInclude Include="database\sprite.hpp" />
     <ClInclude Include="default.hpp" />
     <ClInclude Include="deflate.hpp" />
     <ClInclude Include="divafile.hpp" />
@@ -241,8 +242,11 @@
     <ClInclude Include="prj\vector_pair_combine.hpp" />
     <ClInclude Include="quat.hpp" />
     <ClInclude Include="rectangle.hpp" />
+    <ClInclude Include="sort.hpp" />
+    <ClInclude Include="spr.hpp" />
     <ClInclude Include="str_utils.hpp" />
     <ClInclude Include="time.hpp" />
+    <ClInclude Include="txp.hpp" />
     <ClInclude Include="types.hpp" />
     <ClInclude Include="vec.hpp" />
     <ClInclude Include="waitable_timer.hpp" />
@@ -252,6 +256,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="aes.cpp" />
+    <ClCompile Include="database\sprite.cpp" />
     <ClCompile Include="default.cpp" />
     <ClCompile Include="deflate.cpp" />
     <ClCompile Include="divafile.cpp" />
@@ -274,8 +279,11 @@
     <ClCompile Include="prj\stack_allocator.cpp" />
     <ClCompile Include="prj\time.cpp" />
     <ClCompile Include="quat.cpp" />
+    <ClCompile Include="sort.cpp" />
+    <ClCompile Include="spr.cpp" />
     <ClCompile Include="str_utils.cpp" />
     <ClCompile Include="time.cpp" />
+    <ClCompile Include="txp.cpp" />
     <ClCompile Include="vec.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
