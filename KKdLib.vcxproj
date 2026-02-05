@@ -212,7 +212,6 @@
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="aes.hpp" />
     <ClInclude Include="database\sprite.hpp" />
     <ClInclude Include="default.hpp" />
     <ClInclude Include="deflate.hpp" />
@@ -235,6 +234,7 @@
     <ClInclude Include="mat.hpp" />
     <ClInclude Include="prj\algorithm.hpp" />
     <ClInclude Include="prj\math.hpp" />
+    <ClInclude Include="prj\rijndael.hpp" />
     <ClInclude Include="prj\shared_ptr.hpp" />
     <ClInclude Include="prj\stack_allocator.hpp" />
     <ClInclude Include="prj\time.hpp" />
@@ -255,7 +255,6 @@
     <ResourceCompile Include="KKdLib.rc" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="aes.cpp" />
     <ClCompile Include="database\sprite.cpp" />
     <ClCompile Include="default.cpp" />
     <ClCompile Include="deflate.cpp" />
@@ -276,6 +275,7 @@
     <ClCompile Include="key_val.cpp" />
     <ClCompile Include="kf.cpp" />
     <ClCompile Include="mat.cpp" />
+    <ClCompile Include="prj\rijndael.cpp" />
     <ClCompile Include="prj\stack_allocator.cpp" />
     <ClCompile Include="prj\time.cpp" />
     <ClCompile Include="quat.cpp" />
